@@ -1,0 +1,48 @@
+﻿<Window x:Class="LegalPubClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Choose Role" Height="350" Width="400" MinHeight="350" MinWidth="400">
+
+
+
+
+    <Grid Margin="10 10 10 5">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="22" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="22" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="22" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="22" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="22" />
+        </Grid.RowDefinitions>
+
+        <Button Grid.Row="1" Name="ChooseFirmRepre" Click="ChooseFirmRepre_Click">Firm Representative</Button>
+
+        <Button Grid.Row="3" Name="ChooseAdminSecr" Click="ChooseAdminSecr_Click">Administration Secretary</Button>
+
+        <Button Grid.Row="5" Name="ChooseAdminVald" Click="ChooseAdminVald_Click">Administration Validator</Button>
+
+        <Button Grid.Row="7" Name="ChooseAdminBoss" Click="ChooseAdminBoss_Click">Administration Boss</Button>
+
+
+        <TextBlock Grid.Row="9" Name="Status" />
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="145" Width="372" FontSize="10"
+                   Text="Click buttons to see each role's function:
+            &#x000A;
+            &#x000A;Firm Representative can submit document and update existing documents;
+            &#x000A;Administration Secretary can pre-validate or reject documents;
+            &#x000A;Administration Validator can validate or reject pre-validated documents and view the validated document archive;
+            &#x000A;Administration Boss can create new users and modify existing users"
+        />
+
+
+
+
+
+    </Grid>
+</Window>

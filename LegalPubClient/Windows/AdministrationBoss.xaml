@@ -1,0 +1,79 @@
+﻿<Window x:Class="LegalPubClient.AdministrationBoss"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Administration Boss" Height="350" Width="600" MinHeight="350" MinWidth="600"> 
+    <Grid Margin="10 10 10 5">
+        
+        <Grid.RowDefinitions>
+                
+            <RowDefinition Height="22"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="22" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="22" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="22" />
+            <RowDefinition Height="22" />
+            <RowDefinition Height="22" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="22" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Name="listTitle" FontWeight="Bold">Manage existing users</TextBlock>
+
+            <ListView Grid.Row="1" Name="listView1">
+                <ListView.View>
+                <GridView x:Name="gridView1">
+                    <GridViewColumn Header="ID" Width="40" DisplayMemberBinding="{Binding Path=Id}"></GridViewColumn>
+                    <GridViewColumn Header="Username" Width="200" DisplayMemberBinding="{Binding Path=Username}"></GridViewColumn>
+                    <GridViewColumn Header="Password" Width="200" DisplayMemberBinding="{Binding Path=Password}"></GridViewColumn>
+                    <GridViewColumn Header="Role" Width="90" DisplayMemberBinding="{Binding Path=Role}"></GridViewColumn>
+                </GridView>
+                </ListView.View>
+            </ListView>
+
+        <Canvas Grid.Row="3" Name="SelectedUser" DataContext="{Binding ElementName=listView1,Path=SelectedItem}">
+            <TextBox Name="selectedID" Canvas.Left="5" Width="40" IsEnabled="False" Text="{Binding Id,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <TextBox Name="selectedUsername" Canvas.Left="50" Width="193" IsEnabled="False" Text="{Binding Username,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <TextBox Name="selectedPassword" Canvas.Left="248" Width="193" Text="{Binding Password,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <ComboBox x:Name="selectedRole" Canvas.Left="447" Width="90">
+                <ComboBoxItem Content="FirmRepresentative" Tag="FirmRepresentative"/>
+                <ComboBoxItem Content="AdminSecretary" Tag="AdminSecretary" />
+                <ComboBoxItem Content="AdminValidator" Tag="AdminValidator" />
+                <ComboBoxItem Content="AdminBoss" Tag="AdminBoss" />
+            </ComboBox> 
+        </Canvas>
+        
+        <Canvas Grid.Row="5">
+            <Button Name="Update" Click="Update_Click" Canvas.Right="46">Update</Button>
+            <Button Name="Delete" Click="Delete_Click" Canvas.Right="0">Delete</Button>
+        </Canvas>
+        
+        <TextBlock Grid.Row="7" Name="CreateTitle" FontWeight="Bold">Or Create a new user</TextBlock>
+
+        <Canvas Grid.Row="8">
+            <TextBlock Canvas.Left="50" HorizontalAlignment="Center">Username</TextBlock>
+            <TextBlock Canvas.Left="248" VerticalAlignment="Center">Password</TextBlock>
+        </Canvas>
+ 
+        <Canvas Grid.Row="9" Name="NewUser">
+            <TextBox Name="NewUsername" Canvas.Left="50" Width="193"></TextBox>
+            <TextBox Name="NewPassword" Canvas.Left="248" Width="193"></TextBox>
+            <ComboBox x:Name="NewRole" Canvas.Left="447" Width="90">
+                <ComboBoxItem Content="FirmRepresentative" Tag="FirmRepresentative"/>
+                <ComboBoxItem Content="AdminSecretary" Tag="AdminSecretary"/>
+                <ComboBoxItem Content="AdminValidator" Tag="AdminValidator"/>
+                <ComboBoxItem Content="AdminBoss" Tag="AdminBoss"/>
+            </ComboBox>
+            <Button Name="Ok" Canvas.Right="0" Click="Ok_Click">OK</Button>
+        </Canvas>
+        
+        <Canvas Grid.Row="11">
+            <TextBlock Name="Status" Foreground="Gray"/>
+        </Canvas>
+
+        
+    </Grid>
+   
+</Window>

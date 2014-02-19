@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/PublicationService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_GetNoValidateDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNoValidateDocument" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetNoValidateDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNoValidateDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SubmitDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitDocument" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SubmitDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDocument" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PreValidateDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:PreValidateDocument" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PreValidateDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PreValidateDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ValidateDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateDocument" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ValidateDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDocument" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetPreValidateDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPreValidateDocument" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetPreValidateDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPreValidateDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetValidatedDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetValidatedDocument" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetValidatedDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetValidatedDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUser" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="GetNoValidateDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetNoValidateDocument" message="tns:IService1_GetNoValidateDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetNoValidateDocumentResponse" message="tns:IService1_GetNoValidateDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SubmitDocument" message="tns:IService1_SubmitDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SubmitDocumentResponse" message="tns:IService1_SubmitDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteDocument" message="tns:IService1_DeleteDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteDocumentResponse" message="tns:IService1_DeleteDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PreValidateDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PreValidateDocument" message="tns:IService1_PreValidateDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PreValidateDocumentResponse" message="tns:IService1_PreValidateDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ValidateDocument" message="tns:IService1_ValidateDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ValidateDocumentResponse" message="tns:IService1_ValidateDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateDocument" message="tns:IService1_UpdateDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateDocumentResponse" message="tns:IService1_UpdateDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPreValidateDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetPreValidateDocument" message="tns:IService1_GetPreValidateDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetPreValidateDocumentResponse" message="tns:IService1_GetPreValidateDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetValidatedDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetValidatedDocument" message="tns:IService1_GetValidatedDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetValidatedDocumentResponse" message="tns:IService1_GetValidatedDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetUsers" message="tns:IService1_GetUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetUsersResponse" message="tns:IService1_GetUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddUser" message="tns:IService1_AddUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddUserResponse" message="tns:IService1_AddUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateUser" message="tns:IService1_UpdateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateUserResponse" message="tns:IService1_UpdateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteUser" message="tns:IService1_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteUserResponse" message="tns:IService1_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetNoValidateDocument">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetNoValidateDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitDocument">
+      <soap:operation soapAction="http://tempuri.org/IService1/SubmitDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDocument">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PreValidateDocument">
+      <soap:operation soapAction="http://tempuri.org/IService1/PreValidateDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateDocument">
+      <soap:operation soapAction="http://tempuri.org/IService1/ValidateDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDocument">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPreValidateDocument">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetPreValidateDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValidatedDocument">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetValidatedDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/PublicationService/Service1/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
